@@ -41,6 +41,8 @@ $(document).ready(function() {
 		
 		pics.forEach(function(pic) {
 
+			pic['caption']['text'] = pic['caption']['text'].replace(/'/g, "&prime;")
+
 			imageDOMObject = {
 				"url" : pic['images']['thumbnail']['url'],
 				"link": pic['link'],
