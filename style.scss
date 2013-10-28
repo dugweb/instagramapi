@@ -1,0 +1,65 @@
+@mixin box-shadow($value...) {
+	-webkit-box-shadow: $value;
+	-moz-box-shadow: $value;
+	box-shadow: $value;
+}
+@mixin border-box {
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+}
+@mixin transition ($value...) {
+	-webkit-transition: $value;
+	-moz-transition: $value;
+	-o-transition: $value;
+	transition: $value;
+}
+
+.clearfix {
+    zoom:1;
+    &:before, &:after {
+        content: "\0020"; 
+        display: block; 
+        height: 0; 
+        overflow: hidden; 
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+#igholder {
+	@extend .clearfix;
+	@include border-box;
+	
+
+	li {
+		float: left;
+		position: relative;
+		width:20%;
+		padding:8px;
+		z-index: 10;
+
+		&:hover {
+			z-index: 100;
+		}
+
+		@include border-box;
+		@extend .clearfix;
+
+		a {
+			padding:5px;
+			background:#fff;
+			display:block;
+
+			@include box-shadow(0 0 0 1px rgba(0,0,0,.04), 0 1px 5px rgba(0,0,0,.1));
+			@include border-box;
+			@include transition(all 0.1s ease-out 0.05s);
+
+
+			&:hover {
+				-webkit-transform:scale(1.2, 1.2) rotate(3deg);
+				@include box-shadow(0 0 0 1px rgba(0,0,0,.04), 0 1px 10px -3px rgba(0,0,0,.3))
+			}
+		}
+	}
+}

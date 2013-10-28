@@ -1,12 +1,35 @@
 <html>
 <head>
+<link rel="stylesheet" type="text/css" media="all" href="http://chinahorizons.org/wp-content/themes/CH_theme/style.css" />
+<link rel="stylesheet" type="text/css" media="all" href="style.css" />
 
 </head>
 <body>
+<div id="bg">
+<div id="wrapper">
+<div id="logo"></div>
+<div id="container">
+<div id="nav"></div>
 
-<h2>Instagram Feed</h2>
 
-<div id="igholder"></div>
+
+<h2>Instagram images tagged #ChinaHorizons</h2>
+
+<ul id="igholder">
+
+
+
+
+</ul>
+
+<footer></footer>
+
+</div></div></div>
+
+<div id="footGraphic"></div>
+
+
+
 <script src="http://code.jquery.com/jquery-1.10.1.min.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -32,6 +55,7 @@ $(document).ready(function() {
 		url: "https://api.instagram.com/v1/tags/" + igParams.tag + "/media/recent?client_id=" + igParams.accessToken,
 		success: function(data) {
 			igPicturePrep(data.data);
+			console.log(data);
 		}
 	});
 
@@ -48,13 +72,11 @@ $(document).ready(function() {
 				"link": pic['link'],
 				"caption" : pic['caption']['text'],
 			}
-			imageDOMObject.html = "<a href='" + imageDOMObject.link + "'><img src='" + imageDOMObject.url + "' title='" + imageDOMObject.caption + "'></a>"
+			imageDOMObject.html = "<li><a href='" + imageDOMObject.link + "'><img src='" + imageDOMObject.url + "' title='" + imageDOMObject.caption + "'></a></li>"
 
 			imagearray.push(imageDOMObject);
 
 			igholder.append(imageDOMObject.html);
-
-
 
 		});
 	}

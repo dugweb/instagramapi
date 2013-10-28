@@ -1,0 +1,41 @@
+.clearfix, #igholder, #igholder li {
+  zoom: 1; }
+  .clearfix:before, #igholder:before, #igholder li:before, .clearfix:after, #igholder:after, #igholder li:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden; }
+  .clearfix:after, #igholder:after, #igholder li:after {
+    clear: both; }
+
+#igholder {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box; }
+  #igholder li {
+    float: left;
+    position: relative;
+    width: 20%;
+    padding: 8px;
+    z-index: 10;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box; }
+    #igholder li:hover {
+      z-index: 100; }
+    #igholder li a {
+      padding: 5px;
+      background: #fff;
+      display: block;
+      -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 1px 5px rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 1px 5px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 1px 5px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-transition: all 0.1s ease-out 0.05s;
+      -moz-transition: all 0.1s ease-out 0.05s;
+      -o-transition: all 0.1s ease-out 0.05s;
+      transition: all 0.1s ease-out 0.05s; }
+      #igholder li a:hover {
+        -webkit-transform: scale(1.2, 1.2) rotate(3deg);
+        -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 1px 10px -3px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 1px 10px -3px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 1px 10px -3px rgba(0, 0, 0, 0.3); }
