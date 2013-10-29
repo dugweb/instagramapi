@@ -36,6 +36,6 @@
       transition: all 0.1s ease-out 0.05s; }
       #igholder li a:hover {
         -webkit-transform: scale(1.2, 1.2) rotate(3deg);
-        -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 1px 10px -3px rgba(0, 0, 0, 0.3);
-        -moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 1px 10px -3px rgba(0, 0, 0, 0.3);
-        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 1px 10px -3px rgba(0, 0, 0, 0.3); }
+        -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 30px 5px -20px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 30px 5px -20px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 30px 5px -20px rgba(0, 0, 0, 0.1); }
