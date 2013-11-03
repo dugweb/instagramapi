@@ -16,11 +16,8 @@
 <h2>Instagram images tagged #ChinaHorizons</h2>
 
 <ul id="igholder">
-
-
-
-
 </ul>
+
 
 <footer></footer>
 
@@ -42,7 +39,7 @@ $(document).ready(function() {
 
 	
 	var igParams = {
-		pictures: 4,
+		pictures: 10,
 		tag: "chinahorizons",
 		accessToken: "f1960f58693a47b6aaf3f153b524b90a",
 	}
@@ -71,14 +68,71 @@ $(document).ready(function() {
 				"url" : pic['images']['thumbnail']['url'],
 				"link": pic['link'],
 				"caption" : pic['caption']['text'],
+				"UTCdate" : pic['created_time'],
 			}
-			imageDOMObject.html = "<li><a href='" + imageDOMObject.link + "'><img src='" + imageDOMObject.url + "' title='" + imageDOMObject.caption + "'></a></li>"
+
+			imageDOMObject['date'] = dateFormatter(imageDOMObject['UTCdate']);
+
+			imageDOMObject.html = "<li><a href='" + imageDOMObject.link + "'><img src='" + imageDOMObject.url + "' data-title='" + imageDOMObject.caption + "'></a><span class='igtooltip'><strong>" + imageDOMObject.date + "</strong><p>" + imageDOMObject.caption + "</p></span></li>"
 
 			imagearray.push(imageDOMObject);
-
-			igholder.append(imageDOMObject.html);
-
 		});
+
+		for (var i = 0; i < igParams.pictures; i++) {
+			igholder.append(imagearray[i].html);	
+		}
+		
+	}
+
+	function dateFormatter(utcdate) {
+		var d = new Date(0);
+		d.setUTCSeconds(utcdate);
+
+		var monthnum = d.getMonth();
+		var year = d.getUTCFullYear();
+
+		var month = "";
+		switch (monthnum) {
+			case 1:
+				month = "January";
+				break;
+			case 2:
+				month = "February";
+				break;
+			case 3:
+				month = "March";
+				break;
+			case 4:
+				month = "April";
+				break;
+			case 5:
+				month = "May";
+				break;
+			case 6:
+				month = "June";
+				break;
+			case 7:
+				month = "July";
+				break;
+			case 8:
+				month = "August";
+				break;
+			case 9:
+				month = "September";
+				break;
+			case 10:
+				month = "October";
+				break;
+			case 11:
+				month = "November";
+				break;
+			case 12:
+				month = "December";
+				break;
+		}
+
+		return month + ", " + year;
+
 	}
 });
 
